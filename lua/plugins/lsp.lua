@@ -9,16 +9,16 @@ return {
 		{
 			"folke/lazydev.nvim",
 			ft = "lua", -- only activates on Lua files
-			opts = {}, -- optional for now
+			opts = {},
 		},
 	},
 	config = function()
 		require("mason").setup()
 		require("mason-lspconfig").setup({
-			ensure_installed = { "lua_ls", "pyright" },
+			ensure_installed = { "lua_ls", "pyright", "ts_ls" },
 		})
 
-		-- Load all your custom LSP configs (e.g. from lua/lsp/)
+		-- Load all custom LSP configs from lua/lsp/*
 		require("lsp")
 	end,
 }
