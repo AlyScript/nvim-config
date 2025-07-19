@@ -1,0 +1,24 @@
+return {
+	"neovim/nvim-lspconfig",
+	dependencies = {
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		{ "j-hui/fidget.nvim", opts = {} },
+
+		{
+			"folke/lazydev.nvim",
+			ft = "lua", -- only activates on Lua files
+			opts = {}, -- optional for now
+		},
+	},
+	config = function()
+		require("mason").setup()
+		require("mason-lspconfig").setup({
+			ensure_installed = { "lua_ls", "pyright" },
+		})
+
+		-- Load all your custom LSP configs (e.g. from lua/lsp/)
+		require("lsp")
+	end,
+}
