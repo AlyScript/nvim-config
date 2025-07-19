@@ -24,3 +24,5 @@ vim.keymap.set("n", "<leader>sb", ":tab sball<CR>", { desc = "Tabs from all buff
 vim.keymap.set("n", "<leader>t", ":tabnew<CR>", { desc = "Open tab" })
 vim.keymap.set("n", "<leader>x", ":tabclose<CR>", { desc = "Close tab" })
 vim.keymap.set("n", "gb", ":tabprevious<CR>", { desc = "Previous tab (go back)" })
+
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
