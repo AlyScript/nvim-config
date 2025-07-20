@@ -57,3 +57,5 @@ vim.diagnostic.config({
 		end,
 	},
 })
+
+vim.cmd([[autocmd FileType help wincmd L]])

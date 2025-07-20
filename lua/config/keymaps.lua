@@ -26,3 +26,4 @@ vim.keymap.set("n", "<leader>x", ":tabclose<CR>", { desc = "Close tab" })
 vim.keymap.set("n", "gb", ":tabprevious<CR>", { desc = "Previous tab (go back)" })
 
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
+vim.keymap.set("i", "jj", "<Esc>", { desc = "Exit insert mode" })
