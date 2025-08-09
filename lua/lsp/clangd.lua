@@ -5,5 +5,9 @@ local capabilities = require("blink.cmp").get_lsp_capabilities()
 require("lspconfig").clangd.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
-	cmd = { "clangd" },
+	cmd = {
+		"clangd",
+		"--header-insertion=iwyu",
+		"--completion-style=detailed",
+	},
 })

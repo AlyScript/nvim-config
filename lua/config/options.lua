@@ -24,12 +24,13 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 local opt = vim.opt
 
 -- Tabs and indentation
-opt.tabstop = 3 -- number of visual spaces per TAB
-opt.softtabstop = 3 -- how many spaces a <Tab> counts for while editing
-opt.shiftwidth = 3 -- number of spaces to use for each step of (auto)indent
+opt.tabstop = 4 -- number of visual spaces per TAB
+opt.softtabstop = 4 -- how many spaces a <Tab> counts for while editing
+opt.shiftwidth = 4 -- number of spaces to use for each step of (auto)indent
 opt.expandtab = true -- convert tabs to spaces
 opt.smartindent = true -- smart auto-indenting on new lines
 opt.autoindent = true -- copy indent from current line when starting new one
+opt.cindent = true
 
 vim.diagnostic.config({
 	severity_sort = true,

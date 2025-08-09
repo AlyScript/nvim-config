@@ -17,6 +17,7 @@ M.on_attach = function(_, bufnr)
 	map("grt", builtin.lsp_type_definitions, "[LSP] Type Definition")
 	map("gO", builtin.lsp_document_symbols, "[LSP] Document Symbols")
 	map("gW", builtin.lsp_dynamic_workspace_symbols, "[LSP] Workspace Symbols")
+	map("gca", vim.lsp.buf.code_action, "[LSP] Code Action")
 
 	-- Optional: toggle inlay hints (requires Neovim 0.10+ and supported servers)
 	if vim.lsp.inlay_hint and vim.lsp.inlay_hint.is_enabled then
