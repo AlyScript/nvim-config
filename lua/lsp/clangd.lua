@@ -9,5 +9,6 @@ require("lspconfig").clangd.setup({
 		"clangd",
 		"--header-insertion=iwyu",
 		"--completion-style=detailed",
+		"--function-arg-placeholders=0",
 	},
 })

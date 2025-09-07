@@ -19,7 +19,6 @@ M.on_attach = function(_, bufnr)
 	map("gW", builtin.lsp_dynamic_workspace_symbols, "[LSP] Workspace Symbols")
 	map("gca", vim.lsp.buf.code_action, "[LSP] Code Action")
 
-	-- Optional: toggle inlay hints (requires Neovim 0.10+ and supported servers)
 	if vim.lsp.inlay_hint and vim.lsp.inlay_hint.is_enabled then
 		map("<leader>th", function()
 			vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr }))
