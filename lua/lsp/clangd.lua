@@ -1,4 +1,8 @@
-local lspconfig = require("lspconfig")
+-- Add the following to ~/.clangd
+-- CompileFlags:
+--   Add: [-std=c++23]
+--   Compiler: <path>
+
 local on_attach = require("lsp.on_attach").on_attach
 local capabilities = require("blink.cmp").get_lsp_capabilities()
 
