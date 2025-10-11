@@ -6,7 +6,7 @@
 local on_attach = require("lsp.on_attach").on_attach
 local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-require("lspconfig").clangd.setup({
+vim.lsp.config("clangd", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 	cmd = {
@@ -14,5 +14,8 @@ require("lspconfig").clangd.setup({
 		"--header-insertion=iwyu",
 		"--completion-style=detailed",
 		"--function-arg-placeholders=0",
+		"--query-driver=/opt/homebrew/opt/llvm/bin/clang++,/usr/bin/clang++",
 	},
 })
+
+vim.lsp.enable("clangd")

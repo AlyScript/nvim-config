@@ -1,8 +1,7 @@
-local lspconfig = require("lspconfig")
 local on_attach = require("lsp.on_attach").on_attach
 local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-lspconfig.lua_ls.setup({
+vim.lsp.config("lua_ls", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 	settings = {
@@ -17,3 +16,5 @@ lspconfig.lua_ls.setup({
 		},
 	},
 })
+
+vim.lsp.enable("lua_ls")
