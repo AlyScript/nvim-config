@@ -8,7 +8,15 @@ return {
 			function()
 				require("cppman").open_cppman_for(vim.fn.expand("<cword>"))
 			end,
-			desc = "cppman docs",
+			desc = "Open word under cursor",
+		},
+
+		{
+			"<leader>c",
+			function()
+				require("cppman").input()
+			end,
+			desc = "Open search box",
 		},
 	},
 
