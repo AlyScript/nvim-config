@@ -36,7 +36,8 @@ vim.keymap.set("n", "<leader>en", ":e ~/.config/nvim<CR>", { desc = "[E]dit [N]e
 vim.keymap.set('n', '<leader>bb', function()
     local file_path = vim.fn.expand('%:p')
 
-    local build_cmd = string.format("g++ %s --std=c++23 && echo 'Build successful.'", file_path)
+    local build_cmd = string.format("g++ %s --std=c++23 -g -Wextra -Wpedantic -Wall && echo 'Build successful.'",
+        file_path)
 
     cp.run_in_terminal(build_cmd)
 end, { desc = "[B]uild current [B]uffer" })
@@ -44,7 +45,7 @@ end, { desc = "[B]uild current [B]uffer" })
 vim.keymap.set('n', '<leader>br', function()
     local file_path = vim.fn.expand('%:p')
 
-    local build_run_cmd = string.format("g++ %s --std=c++23 && ./a.out", file_path)
+    local build_run_cmd = string.format("g++ %s --std=c++23 -g -Wextra -Wpedantic -Wall && ./a.out", file_path)
 
     cp.run_in_terminal(build_run_cmd)
 end, { desc = "[B]ompile and [R]un current buffer" })
